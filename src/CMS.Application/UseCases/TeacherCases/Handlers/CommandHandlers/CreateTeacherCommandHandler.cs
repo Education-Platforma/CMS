@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CMS.Application.UseCases.TeacherCases.Handlers.CommandHandlers
 {
-    internal class CreateTeacherCommandHandler
+    public   class CreateTeacherCommandHandler
     {
     }
 }

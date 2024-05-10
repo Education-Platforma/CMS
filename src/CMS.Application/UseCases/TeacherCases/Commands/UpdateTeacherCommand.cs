@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CMS.Application.UseCases.TeacherCases.Commands
 {
-    internal class UpdateTeacherCommand
+    public class UpdateTeacherCommand
     {
     }
 }
