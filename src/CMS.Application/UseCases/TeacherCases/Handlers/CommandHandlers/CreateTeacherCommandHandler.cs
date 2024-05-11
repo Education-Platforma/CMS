@@ -1,5 +1,6 @@
 ﻿using CMS.Application.Abstractions;
 using CMS.Application.UseCases.TeacherCases.Commands;
+using CMS.Domain.Auth;
 using CMS.Domain.Entities;
 using CMS.Domain.Entities.Models;
 using Mapster;

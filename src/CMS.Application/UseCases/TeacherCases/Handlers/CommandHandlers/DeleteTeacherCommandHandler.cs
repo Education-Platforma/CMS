@@ -1,6 +1,7 @@
 ﻿using CMS.Application.Abstractions;
 using CMS.Application.UseCases.EventCases.Commands;
 using CMS.Application.UseCases.TeacherCases.Commands;
+using CMS.Domain.Auth;
 using CMS.Domain.Entities;
 using CMS.Domain.Entities.Models;
 using MediatR;
@@ -55,3 +56,4 @@ namespace CMS.Application.UseCases.TeacherCases.Handlers.CommandHandlers
         }
     }
 }
+ 
