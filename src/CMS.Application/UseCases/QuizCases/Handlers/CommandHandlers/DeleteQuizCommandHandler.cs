@@ -35,6 +35,7 @@ namespace CMS.Application.UseCases.QuizCases.Handlers.CommandHandlers
                     };
                 }
                 _context.Quizzes.Remove(quiz);
+                _context.SaveChangesAsync(cancellationToken);
 
                 return new ResponseModel
                 {

@@ -22,13 +22,12 @@ namespace CMS.Application.UseCases.LessonCases.Handlers.CommandHandler
         {
             var newLesson = new Lesson()
             {
-                Theme = request.Theme,
+               // Theme = request.Theme,
                 Day = request.Day,
                 FromTime = request.FromTime,
                 ToTime = request.ToTime,
                 ClassId = request.ClassId,
                 SubjectId = request.SubjectId,
-                AttendanceId = request.AttendanceId,
                 TeacherId = request.TeacherId
             };
             var res = await _context.Lessons.AddAsync(newLesson);
