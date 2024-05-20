@@ -50,6 +50,9 @@ namespace CMS.Application.UseCases.StudentCases.Handlers.CommandHandlers
             string PhotoFileName = "";
             string PhotoFilePath = "";
 
+
+            if (photo is not null || pdf is not null) { 
+
             try
             {
                 PDFFileName = Guid.NewGuid().ToString() + Path.GetExtension(pdf.FileName);
@@ -77,6 +80,7 @@ namespace CMS.Application.UseCases.StudentCases.Handlers.CommandHandlers
                 };
             }
 
+}
             var Password = new Random().Next(100000, 999999).ToString();
             try
             {
