@@ -55,6 +55,8 @@ namespace CMS.API
             builder.Services.AddSwaggerGen();
             builder.Services.AddMemoryCache();
 
+            builder.Logging.ClearProviders();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -75,6 +77,8 @@ namespace CMS.API
             app.UseAuthorization();
 
             app.MapControllers();
+
+        
 
             using (var scope = app.Services.CreateScope())
             {
