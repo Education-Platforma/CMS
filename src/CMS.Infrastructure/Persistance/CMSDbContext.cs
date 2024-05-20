@@ -11,7 +11,7 @@ namespace CMS.Infrastructure.Persistance
     {
         public CMSDbContext(DbContextOptions<CMSDbContext> options) : base(options)
         {
-            Migrate.Database();
+            Database.Migrate();
         }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Class> Classes { get; set; }
