@@ -50,31 +50,34 @@ namespace CMS.Application.UseCases.TeacherCases.Handlers.CommandHandlers
             string PhotoFileName = "";
             string PhotoFilePath = "";
 
-            try
+            if(request.Photo != null)
             {
-                PDFFileName = Guid.NewGuid().ToString() + Path.GetExtension(pdf.FileName);
-                PDFFilePath = Path.Combine(_webHostEnvironment.WebRootPath, "TeacherPDF", PDFFileName);
+                try
+                {
+                    PDFFileName = Guid.NewGuid().ToString() + Path.GetExtension(pdf.FileName);
+                    PDFFilePath = Path.Combine(_webHostEnvironment.WebRootPath, "TeacherPDF", PDFFileName);
 
-                PhotoFileName = Guid.NewGuid().ToString() + Path.GetExtension(photo.FileName);
-                PhotoFilePath = Path.Combine(_webHostEnvironment.WebRootPath, "TeacherPhoto", PhotoFileName);
+                    PhotoFileName = Guid.NewGuid().ToString() + Path.GetExtension(photo.FileName);
+                    PhotoFilePath = Path.Combine(_webHostEnvironment.WebRootPath, "TeacherPhoto", PhotoFileName);
 
-                using (var stream = new FileStream(PDFFilePath, FileMode.Create))
-                {
-                    await pdf.CopyToAsync(stream);
+                    using (var stream = new FileStream(PDFFilePath, FileMode.Create))
+                    {
+                        await pdf.CopyToAsync(stream);
+                    }
+                    using (var Photostream = new FileStream(PhotoFilePath, FileMode.Create))
+                    {
+                        await photo.CopyToAsync(Photostream);
+                    }
                 }
-                using (var Photostream = new FileStream(PhotoFilePath, FileMode.Create))
+                catch
                 {
-                    await photo.CopyToAsync(Photostream);
+                    return new ResponseModel()
+                    {
+                        Message = "Something went wrong",
+                        StatusCode = 500,
+                        IsSuccess = false
+                    };
                 }
-            }
-            catch
-            {
-                return new ResponseModel()
-                {
-                    Message = "Something went wrong",
-                    StatusCode = 500,
-                    IsSuccess = false
-                };
             }
 
             var Password = new Random().Next(100000, 999999).ToString();

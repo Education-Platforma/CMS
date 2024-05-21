@@ -18,8 +18,8 @@ namespace CMS.Application.UseCases.TeacherCases.Commands
         public string Email { get; set; }
         public Gender Gender { get; set; }
         public CustomeDate BirthDate { get; set; }
-        public IFormFile Photo { get; set; }
-        public IFormFile PDF { get; set; }
+        public IFormFile? Photo { get; set; }
+        public IFormFile? PDF { get; set; }
         public string PhoneNumber { get; set; }
         public Location? Location { get; set; }
         public Guid? SubjectId { get; set; }
