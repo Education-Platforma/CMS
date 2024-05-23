@@ -28,7 +28,7 @@ namespace CMS.API.Controllers
            return await _mediatr.Send(new GetClassByIdQuery() { Id = id });
         }
         [HttpPost]
-        public async Task<ResponseModel> CreateClass([FromForm] CreateClassCommand command)
+        public async Task<ResponseModel> CreateClass( CreateClassCommand command)
         {
             return await _mediatr.Send(command);
         }
