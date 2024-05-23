@@ -25,8 +25,8 @@
     <Folder Include="wwwroot\EmployeePhoto\" />
     <Folder Include="wwwroot\Events\" />
     <Folder Include="wwwroot\Quiz\" />
-    <Folder Include="wwwroot\StudentPhoto\" />
     <Folder Include="wwwroot\StudentPDF\" />
+    <Folder Include="wwwroot\StudentPhoto\" />
   </ItemGroup>
 
 </Project>
